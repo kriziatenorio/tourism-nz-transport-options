@@ -17,6 +17,7 @@ $('#search-form').on('submit', function(event){
     }else if($('#to').val() == ""){
         $('#to-is-invalid').text('Drop-off location is required.');
     }else{
+        window.location.href = "#vehicle-results";
         $('.vehicle-results').css("display", "block");
         $('.vehicles').empty();
         $('#from-is-invalid').text('');
@@ -84,7 +85,9 @@ $('#search-form').on('submit', function(event){
             if(result.length <= 0){
                 $('.vehicle-results .empty-state').css("display", "flex");
                 $('.vehicle-results .title-and-description').css('display', 'none');
-            }
+            }else{
+                $('.vehicle-results .title-and-description').css('display', 'block');
+                }
 
             $('.vehicles').append(placeholder);
             
